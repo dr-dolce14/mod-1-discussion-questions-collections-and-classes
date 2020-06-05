@@ -1,6 +1,22 @@
 # Finish the implementation of the Car class so it has the functionality described below
 
 class Car
+attr_accessor :make, :model
+@@all = []    
+
+def initialize(hash)
+    @make = hash[:make]
+    @model = hash[:model]
+    @@all << self
+end
+
+def self.all
+    @@all
+end
+
+def self.drive
+    puts "VROOOOOOOOOOOM!"
+end
 
 
 
@@ -12,6 +28,7 @@ lada = Car.new("AvtoVAZ", "Lada")
 
 volvo_lightning.make
 #=> "Volvo"
+
 volvo_lightning.model
 #=> "Lightning"
 
